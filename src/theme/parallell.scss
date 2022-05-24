@@ -1,0 +1,165 @@
+@font-face {
+  font-family: 'Muli';
+  src: url('/assets/fontawesome/webfonts/Muli.ttf');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap');
+
+body,
+a,
+* {
+  font-family: 'Muli';
+}
+
+ion-header {
+  color: #fff !important;
+  position: initial !important;
+
+  ion-button {
+    color: #fff !important;
+  }
+
+  ion-title {
+    font-family: 'Muli' !important;
+    color: #2F4AA1 !important;
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  ion-menu-button {
+    color: #12C9E9 !important;
+  }
+
+  ion-toolbar {
+    background: #FFFFFF;
+    --background: #FFFFFF;
+  }
+}
+
+app-profile-menu {
+  ion-item {
+    color: #000000 !important;
+  }
+}
+
+ion-content {
+
+  ion-item,
+  ion-list {
+    --background: #fff;
+    background: #fff !important;
+  }
+}
+
+ion-tab-button {
+  color: #2F4AA1;
+  font-size: 1.5em;
+}
+
+ion-segment-button {
+  color: #000;
+}
+
+ion-tab-bar {
+  border: none;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
+}
+
+.chatbox-icon {
+  color: #50A0FF !important;
+}
+
+.threedot-icon {
+  color: #12C9E9 !important;
+}
+
+.fab_button {
+  width: 92px;
+  height: 38px;
+  background: linear-gradient(90deg, #15D2F0 12.37%, #03A2CC 100%);
+  border-radius: 50px;
+
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
+}
+
+.add_icon {
+  color: #FFFFFF;
+  font-size: 24px;
+  margin-right: 40px;
+}
+
+.add_text {
+  position: absolute;
+  top: 9px;
+  right: 18px;
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
+}
+
+
+/* ----    COLOR VARS ---- */
+$parallell-color-primary: #000;
+$parallell-color-secondary: #12C9E9;
+$parallell-color-medium: #777;
+$parallell-color-accent: #2F4AA1;
+$parallell-color-primary: #000;
+$parallell-color-primary: #000;
+
+
+
+/* ----    LIST VIEW STYLES ---- */
+.paraListView {
+
+  font-family: 'Muli';
+
+
+  ion-label {
+
+    font-size: 1.9rem;
+    --color: $parallell-color-primary;
+  }
+
+  h1 {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #12C9E9;
+    margin-top: 12px;
+  }
+
+  h2 {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: $parallell-color-accent;
+    margin-top: 12px;
+  }
+
+  h3,
+  p {
+
+
+    font-weight: lighter;
+    font-size: 1.0rem;
+    color: #848484;
+    margin-top: 5px;
+  }
+
+  hr {
+    background: $parallell-color-secondary;
+    margin: 0 20px;
+  }
+
+
+
+}

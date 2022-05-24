@@ -1,0 +1,189 @@
+@font-face {
+  font-family: 'Muli';
+  src: url('/assets/fontawesome/webfonts/Muli.ttf');
+}
+
+.container {
+  padding: 16px;
+
+  h4 {
+    font-family: 'Muli';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+    color: #222D57;
+  }
+
+  .welcome {
+    font-family: 'Muli';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #767676;
+  }
+
+  div {
+    border-radius: 5px;
+  }
+
+  .box {
+    height: 200px;
+    display: flex;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+    justify-content: center;
+  }
+
+  .box-first {
+    background: linear-gradient(180deg, #06BCDD 0%, #08A7C5 100%);
+  }
+
+  .box-second {
+    background: linear-gradient(180deg, #3A5FD5 0%, #2B49A9 100%);
+  }
+
+  .box-third {
+    background: linear-gradient(180deg, #738FFE 0%, #5778FE 100%);
+  }
+
+  .box-forth {
+    background: linear-gradient(180deg, #00D4FF 0%, #00AFD2 100%);
+  }
+
+  .captain {
+    margin-top: 20px;
+    font-family: 'Muli';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    color: #222D57;
+  }
+
+  .upcoming {
+    background: #E7EFF6;
+    min-height: 72px;
+  }
+
+  .unread-message {
+    background: #CCE7FF;
+    min-height: 72px;
+  }
+
+  .circle {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    margin: 20px auto;
+    border-radius: 28px;
+    background: #FFFFFF48;
+    border: 1px solid #74E6FF;
+    box-sizing: border-box;
+  }
+
+  ion-icon {
+    color: #FFFFFF;
+    zoom: 1.5;
+    margin: auto;
+  }
+
+  .box-text {
+    font-family: 'Muli';
+    color: #FFFFFF;
+    position: absolute;
+    bottom: 36px;
+    font-size: 14px;
+  }
+
+  img {
+    width: 50px;
+    height: 50px;
+    margin-top: 11px;
+    margin-left: 11px;
+  }
+
+  .title {
+    font-family: 'Muli';
+    position: absolute;
+    top: 17px;
+    left: 75px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    color: #08B4D4;
+  }
+
+  .upcoming-date {
+    font-family: 'Muli';
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 13px;
+    color: #3457C5;
+
+    ion-datetime {
+      display: inline-block;
+      vertical-align: bottom;
+      padding: 0;
+    }
+  }
+
+  .unread-time {
+    font-family: 'Muli';
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 13px;
+    color: #3457C5;
+  }
+
+  .upcoming-text {
+    font-family: 'Muli';
+    position: absolute;
+    top: 36px;
+    left: 75px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #A2A2A2;
+    width: 70%;
+    word-break: break-all;
+  }
+
+  .unread-text {
+    position: absolute;
+    top: 36px;
+    left: 75px;
+    font-family: 'Muli';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #848484;
+    width: 70%;
+    word-break: break-all;
+  }
+
+  .right-arrow {
+    position: absolute;
+    top: 29px;
+    right: 9px;
+  }
+
+  .arrow {
+    color: #000000;
+  }
+
+  .menu-btn {
+    color: #12C9E9;
+  }
+}

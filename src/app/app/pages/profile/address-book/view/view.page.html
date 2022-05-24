@@ -1,0 +1,67 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Address</ion-title>
+    <ion-buttons slot='end'>
+      <ion-button><ion-icon class="chatbox-icon" name="chatbox-ellipses-outline"></ion-icon></ion-button>
+      <ion-button (click)='presentProfileMenu($event)'><ion-icon class="threedot-icon" name="ellipsis-vertical"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content">
+    <form
+      [formGroup]="formData"
+      (ngSubmit)="submit(formData.value)"
+    >
+      <ion-item lines="none">
+        <ion-avatar class="avatar">
+          <img src="assets/imgs/man-1.png" />
+        </ion-avatar>
+      </ion-item>
+      <ion-item lines="none" class="form-control">
+        <ion-label>Title</ion-label>
+        <ion-input
+          formControlName="title"
+          class="title">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none" class="form-control">
+        <ion-label>Name</ion-label>
+        <ion-input
+          formControlName="name"
+          class="name">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none" class="form-control">
+        <ion-label>Mobile</ion-label>
+        <ion-input
+          formControlName="mobile"
+          class="mobile">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none" class="form-control">
+        <ion-label>Email</ion-label>
+        <ion-input
+          formControlName="email"
+          class="email"
+          type="email">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none" class="form-control">
+        <ion-label>Description</ion-label>
+        <ion-textarea
+          formControlName="description"
+          rows="5"
+        ></ion-textarea>
+      </ion-item>
+
+      <div class="d-flex">
+        <button class="submitbutton" type="submit">Save</button>
+      </div>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,16 @@
+<ion-grid>
+  <ion-row>
+    <ion-col *ngFor="let item of items" [routerLink]="[item.uri]" size="4">
+       <div >
+         <div>
+           <i [class]="'fal ' + item.icon"></i>
+         </div>
+         <div>
+              {{item.title}}
+         </div>
+       </div> 
+    
+    </ion-col>  
+    
+  </ion-row>
+</ion-grid>

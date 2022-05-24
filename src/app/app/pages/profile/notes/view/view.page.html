@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Create Note</ion-title>
+    <ion-buttons slot='end'>
+      <ion-button><ion-icon class="chatbox-icon" name="chatbox-ellipses-outline"></ion-icon></ion-button>
+      <ion-button (click)='presentProfileMenu($event)'><ion-icon class="threedot-icon" name="ellipsis-vertical"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content">
+    <form
+      [formGroup]="formData"
+      (ngSubmit)="submit(formData.value)"
+    >
+      <div class="attach">
+        <input type="file" accept="image/jpg, image/jpeg, image/png" #fileEl hidden (change)="changeFile($event)"/>
+        <div class="attachbtn" (click)="fileEl.click()">
+          <ion-icon name="add"></ion-icon>
+        </div>
+        <ion-input formControlName="attachment" [value]="image" readonly="true" class="attachment"></ion-input>
+      </div>
+      <ion-item lines="none" class="form-control">
+        <ion-label>Child</ion-label>
+        <ion-select formControlName="childId" okText="OK" cancelText="Cancel">
+          <ion-select-option *ngFor="let child of children" [value]="child.id">{{ child.name }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item lines="none" class="form-control">
+        <ion-label>Visible to</ion-label>
+        <ion-select formControlName="accessLevel" okText="OK" cancelText="Cancel">
+          <ion-select-option value="parent">PARENT</ion-select-option>
+          <ion-select-option value="everyone">EVERYONE</ion-select-option>
+          <ion-select-option value="private">PRIVATE (SELF)</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item lines="none" class="form-control">
+        <ion-label>Note Details</ion-label>
+        <ion-textarea formControlName="description" class="textarea" rows="7"></ion-textarea>
+      </ion-item>
+      
+      <div class="d-flex">
+        <button class="submitbutton" type="submit">Save</button>
+      </div>
+    </form>
+  </div>
+</ion-content>

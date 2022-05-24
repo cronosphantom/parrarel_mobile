@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Parallell</string>
+    <string name="title_activity_main">Parallell</string>
+    <string name="package_name">com.parallellapp.mobile</string>
+    <string name="custom_url_scheme">com.parallellapp.mobile</string>
+</resources>

@@ -1,0 +1,43 @@
+<ion-content>
+  <div class="content">
+    <div class="ion-text-center">
+      <h4 class="t-login">
+       Login
+      </h4>
+    </div>
+
+    <form #form="ngForm" (ngSubmit)="login(form)">
+      <ion-input name="email" type="email" placeholder="Email" ngModel required>
+        <span>
+          <ion-icon name="mail-outline"></ion-icon>
+        </span>
+      </ion-input>
+      <ion-input name="password" type="password" placeholder="Password" ngModel required>
+        <span>
+          <ion-icon name="bag-remove-outline"></ion-icon>
+        </span>
+      </ion-input>
+      <div class="check">
+        <ion-checkbox></ion-checkbox>
+        <ion-label>Remember password</ion-label>
+      </div>
+      <button class="sign-in-btn" type="submit" [disabled]="form.invalid" expand="block">
+        Sign In
+      </button>
+    </form>
+
+    <div class="ion-text-center ion-margin-top">
+      <span class="signup-label">Don't have any account?</span>
+      <span (click)="signup()" class="ion-margin-start go-signup">Sign Up</span>
+    </div>
+
+    <div class="ion-text-center ion-margin-top">
+      <span class="social-text">--------------------- or ---------------------</span>
+    </div>
+
+    <div class="ion-text-center ion-margin-top">
+      <button class="facebook-button">Facebook</button>
+      <button class="google-button">Google</button>
+    </div>
+  </div>
+</ion-content>

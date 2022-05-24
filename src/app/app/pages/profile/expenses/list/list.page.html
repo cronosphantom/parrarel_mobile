@@ -1,0 +1,74 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Expense</ion-title>
+    <ion-buttons slot='end'>
+      <ion-button><ion-icon class="chatbox-icon" name="chatbox-ellipses-outline"></ion-icon></ion-button>
+      <ion-button (click)='presentProfileMenu($event)'><ion-icon class="threedot-icon" name="ellipsis-vertical"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment (ionChange)="segmentChanged($event)" color="secondary" value="upcoming">
+    <ion-segment-button value="upcoming" >
+      <ion-label>UPCOMING</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="past">
+      <ion-label>PAST</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-list *ngIf="tabActive=='upcoming'">
+    <div [routerLink]="'/profile/expenses/view/'+expense.id" *ngFor="let expense of upcoming_expenses">
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img src="assets/imgs/man-1.png">
+        </ion-avatar>
+        <ion-label class="main">
+          <p class="amount">$ {{ expense.split1UserAmount + expense.split2UserAmount }}</p>
+          <p class="description">{{ expense.description }}</p>
+          <p class="info">SPLIT: {{ expense.split1User.firstName }} {{ expense.split1UserAmount }} | {{ expense.split2User.firstName }} {{ expense.split2UserAmount }}</p>
+          <p class="check">
+            <button class="check-button"><ion-icon class="check-symbol" name="checkmark-outline"></ion-icon></button>
+            <button class="check-button"><ion-icon class="cancel-symbol" name="close-outline"></ion-icon></button>
+          </p>
+        </ion-label>
+        <ion-label class="datetime">
+            <h2>{{ getDate(expense.onDate) }}</h2><h2 class="month">{{ getMonth(expense.onDate) }}</h2>
+        </ion-label>
+      </ion-item>
+      <hr>
+    </div>
+  </ion-list>
+
+  <ion-list *ngIf="tabActive=='past'">
+    <div [routerLink]="'/profile/expenses/view/'+expense.id" *ngFor="let expense of past_expenses">
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img src="assets/imgs/man-1.png">
+        </ion-avatar>
+        <ion-label class="main">
+          <p class="past-amount">$ {{ expense.split1UserAmount + expense.split2UserAmount }}</p>
+          <p class="past-description">{{ expense.description }}</p>
+          <p class="past-info">SPLIT: {{ expense.split1User.firstName }} {{ expense.split1UserAmount }} | {{ expense.split2User.firstName }} {{ expense.split2UserAmount }}</p>
+          <p class="check">
+            <button class="check-button"><ion-icon class="check-symbol" name="checkmark-outline"></ion-icon></button>
+            <button class="check-button"><ion-icon class="check-symbol" name="checkmark-outline"></ion-icon></button>
+          </p>
+        </ion-label>
+        <ion-label class="past-datetime">
+            <h2>{{ getDate(expense.onDate) }}</h2><h2>{{ getMonth(expense.onDate) }}</h2>
+        </ion-label>
+      </ion-item>
+      <hr>
+    </div>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <button class="fab_button" routerLink="/profile/expenses/view" routerDirection="forward">
+      <ion-icon class="add_icon" name="add"></ion-icon><span class="add_text">Add</span>
+    </button>
+  </ion-fab>
+</ion-content>

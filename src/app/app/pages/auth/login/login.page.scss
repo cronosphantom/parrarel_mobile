@@ -1,0 +1,145 @@
+@font-face {
+  font-family: 'Muli';
+  src: url('/assets/fontawesome/webfonts/Muli.ttf');
+}
+
+.content {
+  padding: 25px;
+  font-family: 'Muli';
+  background: linear-gradient(180deg, #15D2F0 0%, #019EC9 100%);
+  width: 100%;
+  height: 868px;
+
+  .t-login {
+    margin: 80px auto;
+    font-family: 'Muli';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 35px;
+    color: #FFFFFF;
+  }
+
+  ion-input {
+    height: 45px;
+    margin-bottom: 18px;
+    background: rgba(255, 255, 255, 0.35);
+    border: 1px solid #58E1FF;
+    box-sizing: border-box;
+    border-radius: 5px;
+    --placeholder-color: #FFFFFF;
+    --placeholder-opacity: 1;
+    text-indent: 50px;
+    font-family: 'Muli';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    color: #FFFFFF;
+
+    span {
+      position: absolute;
+      top: 11px;
+      left: -40px;
+
+      ion-icon {
+        color: #FFFFFF;
+        zoom: 1.6;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .check {
+    margin-bottom: 18px;
+    display: flex;
+
+    ion-label {
+      font-family: 'Muli';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 18px;
+      color: #FFFFFF;
+      margin-left: 11px;
+    }
+
+    ion-checkbox {
+      --background-color: white;
+      --background: #0dbde0;
+      --background-checked: #0dbde0;
+      --border-color-checked: white;
+      --border-color: white;
+      --checkmark-color: white;
+    }
+  }
+
+  .sign-in-btn {
+    width: 100%;
+    height: 45px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    font-family: 'Muli';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    color: #222D57;
+  }
+
+  .signup-label {
+    font-family: 'Muli';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+  }
+
+  .go-signup {
+    font-family: 'Muli';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+    text-decoration: underline;
+  }
+
+  .facebook-button {
+    width: 148px;
+    height: 45px;
+    background: #2775D1;
+    border-radius: 5px;
+    font-family: 'Muli';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+    margin: 5px;
+  }
+
+  .google-button {
+    width: 148px;
+    height: 45px;
+    background: #FF6B6B;
+    border-radius: 5px;
+    font-family: 'Muli';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+    margin: 5px;
+  }
+
+  .social-text {
+    font-family: 'Muli';
+    font-style: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+    font-weight: bold;
+  }
+}

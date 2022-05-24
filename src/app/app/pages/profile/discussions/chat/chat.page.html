@@ -1,0 +1,68 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Chat</ion-title>
+    <ion-buttons slot='end'>
+      <ion-button><ion-icon class="chatbox-icon" name="chatbox-ellipses-outline"></ion-icon></ion-button>
+      <ion-button (click)='presentProfileMenu($event)'><ion-icon class="threedot-icon" name="ellipsis-vertical"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content">
+    <ion-item lines="none">
+      <p class="topic-line">Topic Line</p>
+    </ion-item>
+    <ion-label>Messages</ion-label>
+    <div class="topic-content">
+      <div class="other-message">
+        <p class="message-content">Messages from others</p>
+        <p class="time-ago">4 hours ago</p>
+      </div>
+      <div class="other-message">
+        <p class="message-content">Messages from others</p>
+        <p class="time-ago">2 hours ago</p>
+      </div>
+      <div class="my-message">
+        <p class="message-content">Messages from me</p>
+        <p class="time-ago">1 hour ago</p>
+      </div>
+      <div class="other-message">
+        <p class="message-content">Messages from others</p>
+        <p class="time-ago">38 minutes ago</p>
+      </div>
+      <div class="my-message">
+        <p class="message-content">Messages from me</p>
+        <p class="time-ago">1 minute ago</p>
+      </div>
+      <div class="my-message">
+        <p class="message-content">Messages from me</p>
+        <p class="time-ago">just now</p>
+      </div>
+      <div class="other-message">
+        <p class="message-content">Messages from others</p>
+        <p class="time-ago">38 minutes ago</p>
+      </div>
+      <div class="other-message">
+        <p class="message-content">Messages from others</p>
+        <p class="time-ago">38 minutes ago</p>
+      </div>
+      <div class="other-message">
+        <p class="message-content">Messages from others</p>
+        <p class="time-ago">38 minutes ago</p>
+      </div>
+    </div>
+    <form>
+      <ion-item lines="none" class="form-control">
+        <ion-input placeholder="Type a message"></ion-input>
+      </ion-item>
+      
+      <div class="d-flex">
+        <button class="submitbutton">Send</button>
+      </div>
+    </form>
+  </div>
+</ion-content>

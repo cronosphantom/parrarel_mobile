@@ -1,0 +1,123 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Inbox</ion-title>
+    <ion-buttons slot='end'>
+      <ion-button><ion-icon class="chatbox-icon" name="chatbox-ellipses-outline"></ion-icon></ion-button>
+      <ion-button (click)='presentProfileMenu($event)'><ion-icon class="threedot-icon" name="ellipsis-vertical"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment (ionChange)="segmentChanged($event)" color="secondary" value="incoming">
+    <ion-segment-button value="incoming" >
+      <ion-label>Incoming</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="sent">
+      <ion-label>Sent</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="draft">
+      <ion-label>Draft</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="trash">
+      <ion-label>Trash</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-list *ngIf="tabActive=='incoming'">
+    <div routerLink="/profile/inbox/view">
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img src="assets/imgs/man-1.png">
+        </ion-avatar>
+        <ion-label class="main">
+          <p class="subject">Incoming main Description</p>
+          <p class="message">Any notes about the email or any obligation you need to follow.</p>
+          <p class="ride">RIDE: Charles</p>
+        </ion-label>
+        <ion-label class="icon-label">
+          <ion-icon class="icon" name="arrow-undo"></ion-icon>
+        </ion-label>
+        <ion-label class="datetime">
+          <h2>13</h2><h2>Jun</h2><p>12:00</p><p>pm</p>
+        </ion-label>
+      </ion-item>
+      <hr>
+    </div>
+  </ion-list>
+
+  <ion-list *ngIf="tabActive=='sent'">
+    <div routerLink="/profile/inbox/view">
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img src="assets/imgs/man-2.png">
+        </ion-avatar>
+        <ion-label class="main">
+          <p class="subject">Past email Description</p>
+          <p class="message">Any notes about the email or any obligation you need to follow.</p>
+          <p class="ride">RIDE: Charles</p>
+        </ion-label>
+        <!-- <ion-label class="icon-label">
+          <ion-icon class="icon" name="arrow-undo"></ion-icon>
+        </ion-label> -->
+        <ion-label class="datetime">
+          <h2>13</h2><h2>Jun</h2><p>12:00</p><p>pm</p>
+        </ion-label>
+      </ion-item>
+      <hr>
+    </div>
+  </ion-list>
+
+  <ion-list *ngIf="tabActive=='draft'">
+    <div routerLink="/profile/inbox/view">
+      <ion-item lines="none">
+        <!-- <ion-avatar slot="start">
+          <img src="assets/imgs/man-2.png">
+        </ion-avatar> -->
+        <ion-label class="main">
+          <p class="subject">Draft email Description</p>
+          <p class="message">Any notes about the email or any obligation you need to follow.</p>
+          <p class="ride">RIDE: Charles</p>
+        </ion-label>
+        <!-- <ion-label class="icon-label">
+          <ion-icon class="icon" name="arrow-undo"></ion-icon>
+        </ion-label>
+        <ion-label class="datetime" style="text-align: center;">
+          <h2>13</h2><h2>Jun</h2><p>12:00</p><p>pm</p>
+        </ion-label> -->
+      </ion-item>
+      <hr>
+    </div>
+  </ion-list>
+
+  <ion-list *ngIf="tabActive=='trash'">
+    <div>
+      <ion-item lines="none">
+        <!-- <ion-avatar slot="start">
+          <img src="assets/imgs/man-2.png">
+        </ion-avatar> -->
+        <ion-label class="main">
+          <p class="subject">Trash email Description</p>
+          <p class="message">Any notes about the email or any obligation you need to follow.</p>
+          <p class="ride">RIDE: Charles</p>
+        </ion-label>
+        <!-- <ion-label class="icon-label">
+          <ion-icon class="icon" name="arrow-undo"></ion-icon>
+        </ion-label>
+        <ion-label class="datetime" style="text-align: center;">
+          <h2>13</h2><h2>Jun</h2><p>12:00</p><p>pm</p>
+        </ion-label> -->
+      </ion-item>
+      <hr>
+    </div>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <button class="fab_button" routerLink="/profile/inbox/view" routerDirection="forward">
+      <ion-icon class="add_icon" name="add"></ion-icon><span class="add_text">Add</span>
+    </button>
+  </ion-fab>
+</ion-content>

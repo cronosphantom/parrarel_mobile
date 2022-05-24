@@ -1,0 +1,68 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Calendar</ion-title>
+    <ion-buttons slot='end'>
+      <ion-button><ion-icon class="chatbox-icon" name="chatbox-ellipses-outline"></ion-icon></ion-button>
+      <ion-button (click)='presentProfileMenu($event)'><ion-icon class="threedot-icon" name="ellipsis-vertical"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment (ionChange)="segmentChanged($event)" color="secondary" value="upcoming">
+    <ion-segment-button value="upcoming" >
+      <ion-label>UPCOMING</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="past">
+      <ion-label>PAST</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-list *ngIf="tabActive==='upcoming'">
+    <div [routerLink]="'/profile/calendar/view/'+calendar.id" *ngFor="let calendar of upcomingCalendars">
+      <ion-item lines="none" class="paraListView">
+        <ion-avatar slot="start">
+          <img src="assets/imgs/man-1.png">
+        </ion-avatar>
+        <ion-col class="upcoming-main">
+          <h2>{{ calendar.name }}</h2>
+          <p>{{ calendar.description }}</p>
+          <p class="rideInfo" *ngIf="calendar.rideInformation && calendar.rideInformation.length > 1">RIDE: {{calendar.rideInformation}}</p>
+        </ion-col>
+     
+        <ion-label class="datetime">
+          <app-date-list-display [displayDate]="calendar.onDate"></app-date-list-display>
+         
+        </ion-label>
+      </ion-item>
+      <hr>
+    </div>
+  </ion-list>
+
+  <ion-list *ngIf="tabActive==='past'">
+    <div [routerLink]="'/profile/calendar/view/'+calendar.id" *ngFor="let calendar of pastCalendars">
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img src="assets/imgs/man-1.png">
+        </ion-avatar>
+        <ion-label class="past-main">
+          <h2>{{ calendar.name }}</h2>
+          <p class="rideInfo">{{ calendar.details }}</p>
+          <p class="ride">RIDE: CHARLES</p>
+        </ion-label>
+        <ion-label class="datetime past">
+          <h2>{{ getDate(calendar.onDate) }}</h2><h2>{{ getMonth(calendar.onDate) }}</h2><p>{{ getHours(calendar.onDate) }}:{{ getMinutes(calendar.onDate) }}</p><p>{{ getAP(calendar.onDate) }}</p>
+        </ion-label>
+      </ion-item>
+      <hr>
+    </div>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <button class="fab_button" routerLink="/profile/calendar/view" routerDirection="forward">
+      <ion-icon class="add_icon" name="add"></ion-icon><span class="add_text">Add</span>
+    </button>
+  </ion-fab>
+</ion-content>

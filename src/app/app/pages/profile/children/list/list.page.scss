@@ -1,0 +1,45 @@
+ion-avatar {
+  height: 100%;
+  width: 80px;
+}
+
+img {
+  max-width: 80px;
+  max-height: 80px;
+  width: 80px;
+  height: 80px;
+}
+
+ion-label {
+  height: 100%;
+}
+
+h1 {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  color: #2F4AA1;
+  margin-top: 12px;
+}
+
+h3,
+p {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #848484;
+  margin-top: 14px;
+}
+
+hr {
+  background: #12C9E9;
+  margin: 0 20px;
+}
+
+ion-item {
+  height: 100px;
+}

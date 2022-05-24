@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Access Control</ion-title>
+    <ion-buttons slot='end'>
+      <ion-button><ion-icon class="chatbox-icon" name="chatbox-ellipses-outline"></ion-icon></ion-button>
+      <ion-button (click)='presentProfileMenu($event)'><ion-icon class="threedot-icon" name="ellipsis-vertical"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <div *ngIf="isParent">
+      <div [routerLink]="'/profile/access-control/view/'+access.id" *ngFor="let access of accesscontrols">
+        <div *ngIf="access.user != null">
+          <ion-item>
+            <ion-avatar slot="start">
+              <img src="assets/imgs/man-1.png" />
+            </ion-avatar>
+            <ion-label>
+              <h1>{{ access.user.firstName }} {{ access.user.lastName }}</h1>
+              <h3>ROLE: {{ getRoleText(access.role) }}</h3>
+              <p>EMAIL: {{ access.user.email }}</p>
+            </ion-label>
+          </ion-item>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!isParent">
+      <h4>Permission Denied</h4>
+    </div>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <button class="fab_button" routerLink="/profile/access-control/view" routerDirection="forward">
+      <ion-icon class="add_icon" name="add"></ion-icon><span class="add_text">Add</span>
+    </button>
+  </ion-fab>
+</ion-content>

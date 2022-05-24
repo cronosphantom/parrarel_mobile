@@ -1,0 +1,37 @@
+ion-content {
+  ion-list {
+    padding: 20px;
+
+    div {
+
+      ion-item {
+        ion-avatar {
+          width: 100%;
+          height: 100%;
+          max-width: 65px;
+          max-height: 65px;
+          margin-left: -16px;
+        }
+
+          .date {
+            font-family: 'Muli';
+            font-style: italic;
+            font-weight: 300;
+            font-size: .9rem;
+            line-height: 16px;
+
+            ion-datetime {
+              display: inline-block;
+              vertical-align: bottom;
+              padding: 0 0 2px;
+            }
+        }
+      }
+
+      hr {
+        background: #12C9E9;
+        margin: 2px 0;
+      }
+    }
+  }
+}

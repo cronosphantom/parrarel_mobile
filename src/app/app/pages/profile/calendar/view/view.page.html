@@ -1,0 +1,77 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Calendar</ion-title>
+    <ion-buttons slot='end'>
+      <ion-button><ion-icon class="chatbox-icon" name="chatbox-ellipses-outline"></ion-icon></ion-button>
+      <ion-button (click)='presentProfileMenu($event)'><ion-icon class="threedot-icon" name="ellipsis-vertical"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content">
+    <form 
+      [formGroup]="formData"
+      (ngSubmit)="submit(formData.value)"
+    >
+      <ion-item lines="none" class="form-control">
+        <ion-label>Child</ion-label>
+        <ion-select >
+          <ion-select-option *ngFor="let child of children" [value]="child.id">{{ child.name }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item lines="none" class="form-control">
+        <ion-label>Description</ion-label>
+        <ion-textarea rows="4" class="description" formControlName="description" ></ion-textarea>
+      </ion-item>
+      <div>
+        <ion-checkbox formControlName="isRecurring" [checked]="formData.controls.isRecurring"></ion-checkbox>
+        <ion-label>Reoccuring</ion-label>
+      </div>
+      <ion-row>
+        <ion-col size="6" class="left-col">
+          <!-- DOB -->
+          <ion-item lines="none" class="form-control">
+            <!-- <ion-label>DOB</ion-label> -->
+            <ion-datetime
+              formControlName="onDate"
+              displayFormat="MM/DD/YYYY"
+              picker-format="MM/DD/YYYY">
+            </ion-datetime>
+            <span>
+              <ion-icon class="date-icon" name="today-outline"></ion-icon>
+            </span>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6" class="right-col">
+          <!-- Time -->
+          <ion-item lines="none" class="form-control">
+            <!-- <ion-label>Time</ion-label> -->
+            <ion-datetime
+              formControlName="onDate"
+              displayFormat="h:mm a"
+              picker-format="h:mm a">
+            </ion-datetime>
+            <span>
+              <ion-icon class="date-icon" name="time-outline"></ion-icon>
+            </span>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-item lines="none" class="form-control">
+        <ion-label>Location</ion-label>
+        <ion-input class="location" type="text" formControlName="location" ></ion-input>
+      </ion-item>
+      <ion-item lines="none" class="form-control">
+        <ion-label>Ride</ion-label>
+        <ion-input class="ride" type="text" formControlName="rideInformation" ></ion-input>
+      </ion-item>
+      <div class="d-flex">
+        <button class="submitbutton" type="submit">Save</button>
+      </div>
+    </form>
+  </div>
+</ion-content>

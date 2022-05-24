@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Gift</ion-title>
+    <ion-buttons slot='end'>
+      <ion-button><ion-icon class="chatbox-icon" name="chatbox-ellipses-outline"></ion-icon></ion-button>
+      <ion-button (click)='presentProfileMenu($event)'><ion-icon class="threedot-icon" name="ellipsis-vertical"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content">
+    <form
+      [formGroup]="formData"
+      (ngSubmit)="submit(formData.value)"
+    >
+      <ion-list>
+        <ion-item lines="none" class="form-control">
+          <ion-label>Name/Site</ion-label>
+          <ion-input formControlName="name" class="name" type="text"></ion-input>
+        </ion-item>
+        <ion-item lines="none" class="form-control">
+          <ion-label>Visible to</ion-label>
+          <ion-select formControlName="accessLevel" okText="OK" cancelText="Cancel">
+            <ion-select-option value="parent">PARENT</ion-select-option>
+            <ion-select-option value="everyone">EVERYONE</ion-select-option>
+            <ion-select-option value="private">PRIVATE (SELF)</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item lines="none" class="form-control">
+          <ion-label>Link</ion-label>
+          <ion-input formControlName="url" class="url" type="text"></ion-input>
+        </ion-item>
+        <ion-item lines="none" class="form-control">
+          <ion-label>Details</ion-label>
+          <ion-textarea formControlName="description" class="textarea" rows="10"></ion-textarea>
+        </ion-item>
+      </ion-list>
+      
+      <div class="d-flex">
+        <button class="submitbutton" type="submit">Save</button>
+      </div>
+    </form>
+  </div>
+</ion-content>

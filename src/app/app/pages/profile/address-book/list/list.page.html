@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Address Book</ion-title>
+    <ion-buttons slot='end'>
+      <ion-button><ion-icon class="chatbox-icon" name="chatbox-ellipses-outline"></ion-icon></ion-button>
+      <ion-button (click)='presentProfileMenu($event)'><ion-icon class="threedot-icon" name="ellipsis-vertical"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="paraListView">
+    <div [routerLink]="'/profile/address-book/view/'+entry.id" *ngFor="let entry of addressbook">
+      <ion-item class="paraLiveView">
+        <ion-avatar slot="start">
+          <img src="assets/imgs/man-1.png" />
+        </ion-avatar>
+        <ion-label>
+          <h1>{{entry.name}}</h1>
+          <h3><i class="fal fa-phone"></i> {{entry.mobile}}</h3>
+          <p><i class="fal fa-email"></i> {{entry.email}}</p>
+        </ion-label>
+      </ion-item>
+      <hr>
+    </div>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <button class="fab_button" routerLink="/profile/address-book/view" routerDirection="forward">
+      <ion-icon class="add_icon" name="add"></ion-icon><span class="add_text">Add</span>
+    </button>
+  </ion-fab>
+</ion-content>
+

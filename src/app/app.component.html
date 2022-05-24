@@ -1,0 +1,33 @@
+<ion-app>
+  <ion-menu contentId="main" side="start" type="overlay" swipeGesture="false" autoclose="true">
+    <ion-content>
+      <ion-list id="menu">
+        <ion-menu-toggle auto-hide="false">
+          <div>
+            <ion-item lines="none" routerLink="/profile/calendar/list">Calendar</ion-item>
+            <ion-item lines="none" routerLink="/profile/expenses/list">Expenses</ion-item>
+            <ion-item lines="none" routerLink="/profile/notes/list">Notes</ion-item>
+            <ion-item lines="none" routerLink="/profile/passwords/list">Passwords</ion-item>
+            <ion-item lines="none" routerLink="/profile/address-book/list">Address Book</ion-item>
+            <ion-item lines="none" routerLink="/profile/gifts/list">Gift List</ion-item>
+            <ion-item lines="none" routerLink="/profile/children/list">Children</ion-item>
+            <ion-item lines="none" routerLink="/profile/inbox/list">Mail</ion-item>
+            <ion-item routerLink="/profile/discussions/list" >Discussions</ion-item>
+          </div>
+          <div>
+            <ion-item lines="none" routerLink="/my-account/">My Account</ion-item>
+            <ion-item lines="none" routerLink="/profile/access-control/list">Access Manager</ion-item>
+            <ion-item lines="none" routerLink="/connect-profile">Connect Profile</ion-item>
+            <ion-item lines="none" routerLink="/switch-profile/">Switch Profile</ion-item>
+            <ion-item lines="none" routerLink="/add-profile">Add Profile</ion-item>
+            <ion-item lines="none" routerLink="/about/">About</ion-item>
+            <ion-item lines="none" (click)="logout()">Logout</ion-item>
+          </div>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main" main></ion-router-outlet>
+
+  <app-tabnav></app-tabnav>
+</ion-app>

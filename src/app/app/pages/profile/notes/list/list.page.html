@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Notes</ion-title>
+    <ion-buttons slot='end'>
+      <ion-button><ion-icon class="chatbox-icon" name="chatbox-ellipses-outline"></ion-icon></ion-button>
+      <ion-button (click)='presentProfileMenu($event)'><ion-icon class="threedot-icon" name="ellipsis-vertical"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <div [routerLink]="'/profile/notes/view/'+note.id" *ngFor="let note of notes">
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img src="assets/imgs/man-1.png">
+        </ion-avatar>
+       
+        <ion-col>
+           <p>{{note.description}}</p>
+          <span class="date">Created {{note.createdAt | date}}  by : Levar</span>
+        </ion-col>
+         
+       
+        <!-- <i class="fal fa-thumbtack"></i> -->
+      </ion-item>
+      <hr>
+    </div>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <button class="fab_button" routerLink="/profile/notes/view" routerDirection="forward">
+      <ion-icon class="add_icon" name="add"></ion-icon><span class="add_text">Add</span>
+    </button>
+  </ion-fab>
+</ion-content>

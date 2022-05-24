@@ -1,0 +1,75 @@
+@font-face {
+  font-family: 'Muli';
+  src: url('/assets/fontawesome/webfonts/Muli.ttf');
+}
+
+.content {
+  padding: 20px;
+  font-family: 'Muli' !important;
+}
+
+.form-control {
+  font-family: 'Muli' !important;
+  margin-top: 15px;
+  --background: #E6EFF6 !important;
+  border-radius: 10px;
+}
+
+ion-label {
+  font-family: 'Muli' !important;
+  margin-top: 7px !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-size: 14px !important;
+  line-height: 18px !important;
+  color: #2F4AA1 !important;
+}
+
+.submitbutton {
+  width: 153px !important;
+  height: 39px !important;
+  background: linear-gradient(90deg, #15D2F0 12.37%, #03A2CC 100%) !important;
+  border-radius: 50px !important;
+
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
+  margin: 20px auto;
+}
+
+.name {
+  text-indent: 20px;
+}
+
+.email {
+  text-indent: 58px;
+}
+
+.password {
+  text-indent: 48px;
+}
+
+.newPassword {
+  text-indent: 43px;
+}
+
+.confirmPassword {
+  text-indent: 20px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+ion-input {
+  font-family: 'Muli' !important;
+}
+
+span {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}

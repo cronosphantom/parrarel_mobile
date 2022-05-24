@@ -1,0 +1,89 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Discussions</ion-title>
+    <ion-buttons slot='end'>
+      <ion-button><ion-icon class="chatbox-icon" name="chatbox-ellipses-outline"></ion-icon></ion-button>
+      <ion-button (click)='presentProfileMenu($event)'><ion-icon class="threedot-icon" name="ellipsis-vertical"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment (ionChange)="segmentChanged($event)" color="secondary" value="current">
+    <ion-segment-button value="current" >
+      <ion-label>Current</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="archive">
+      <ion-label>Archive</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="trash">
+      <ion-label>Trash</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-list *ngIf="tabActive=='current'">
+    <div routerLink="/profile/discussions/chat">
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img src="assets/imgs/man-1.png">
+        </ion-avatar>
+        <ion-label class="main">
+          <p class="subject">Incoming main Description</p>
+          <p class="message">Any notes about the discussion you need to follow.</p>
+          <p class="ride">RIDE: Charles</p>
+        </ion-label>
+        <ion-label class="datetime">
+          <h2>13</h2><h2>Jun</h2><p>12:00</p><p>pm</p>
+        </ion-label>
+      </ion-item>
+      <hr>
+    </div>
+  </ion-list>
+
+  <ion-list *ngIf="tabActive=='archive'">
+    <div routerLink="/profile/discussions/chat">
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img src="assets/imgs/man-1.png">
+        </ion-avatar>
+        <ion-label class="main">
+          <p class="subject">Past Discussion</p>
+          <p class="message">Any notes about the discussion you need to follow.</p>
+          <p class="ride">RIDE: Charles</p>
+        </ion-label>
+        <ion-label class="datetime">
+          <h2>13</h2><h2>Jun</h2><p>12:00</p><p>pm</p>
+        </ion-label>
+      </ion-item>
+      <hr>
+    </div>
+  </ion-list>
+
+  <ion-list *ngIf="tabActive=='trash'">
+    <div>
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img src="assets/imgs/man-1.png">
+        </ion-avatar>
+        <ion-label class="main">
+          <p class="subject">Trash Discussion</p>
+          <p class="message">Any notes about the discussion you need to follow.</p>
+          <p class="ride">RIDE: Charles</p>
+        </ion-label>
+        <ion-label class="datetime">
+          <h2>13</h2><h2>Jun</h2><p>12:00</p><p>pm</p>
+        </ion-label>
+      </ion-item>
+      <hr>
+    </div>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <button class="fab_button" routerLink="/profile/discussions/view">
+      <ion-icon class="add_icon" name="add"></ion-icon><span class="add_text">Add</span>
+    </button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,96 @@
+@font-face {
+  font-family: 'Muli';
+  src: url('/assets/fontawesome/webfonts/Muli.ttf');
+}
+
+.content {
+  padding: 20px;
+  font-family: 'Muli' !important;
+}
+
+.form-control {
+  font-family: 'Muli' !important;
+  margin-top: 15px;
+  --background: #E6EFF6 !important;
+  border-radius: 10px;
+}
+
+ion-label {
+  font-family: 'Muli' !important;
+  margin-top: 7px !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-size: 14px !important;
+  line-height: 18px !important;
+  color: #2F4AA1 !important;
+}
+
+.submitbutton {
+  width: 153px !important;
+  height: 39px !important;
+  background: linear-gradient(90deg, #15D2F0 12.37%, #03A2CC 100%) !important;
+  border-radius: 50px !important;
+
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
+  margin: 20px auto;
+}
+
+.to,
+.cc {
+  text-indent: 50px;
+}
+
+.subject {
+  text-indent: 20px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+ion-checkbox {
+  color: #848484;
+  margin: 16px 10px -4px 0;
+  --background-color: #FFFFFF;
+  --background: #FFFFFF;
+  --background-checked: #FFFFFF;
+  --border-color-checked: #2F4AA1;
+  --border-color: #2F4AA1;
+  --checkmark-color: #2F4AA1;
+}
+
+ion-textarea {
+  font-family: 'Muli' !important;
+  --background: #E6EFF6 !important;
+  border-radius: 10px !important;
+}
+
+ion-datetime {
+  font-family: 'Muli' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #2F4AA1;
+}
+
+ion-input {
+  font-family: 'Muli' !important;
+}
+
+.date-icon {
+  width: 20px;
+  height: 20px;
+  color: #12C9E9;
+}
+
+span {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}

@@ -1,0 +1,100 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+    <ion-buttons slot='end'>
+      <ion-button><ion-icon class="chatbox-icon" name="chatbox-ellipses-outline"></ion-icon></ion-button>
+      <ion-button (click)='presentProfileMenu($event)'><ion-icon class="threedot-icon" name="ellipsis-vertical"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <h4>Hi {{ name }}</h4>
+    <h5 class="welcome">Welcome to Parallell</h5>
+    <ion-row>
+      <ion-col size="6">
+        <div class="box box-first" routerLink="/profile/children/list">
+          <div class="circle">
+            <ion-icon name="man"></ion-icon>
+          </div>
+          <span class="box-text">Children</span>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <div class="box box-second" routerLink="/profile/address-book/list">
+          <div class="circle">
+            <ion-icon name="book-outline"></ion-icon>
+          </div>
+          <span class="box-text">Address Book</span>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <div class="box box-third" routerLink="/profile/notes/list">
+          <div class="circle">
+            <ion-icon name="document-outline"></ion-icon>
+          </div>
+          <span class="box-text">Notes</span>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <div class="box box-forth" routerLink="/profile/inbox/list">
+          <div class="circle">
+            <ion-icon name="mail-outline"></ion-icon>
+          </div>
+          <span class="box-text">Email</span>
+        </div>
+      </ion-col>
+    </ion-row>
+    <h5 class="captain">Upcomming event</h5>
+    <ion-row>
+      <ion-col size="12" *ngFor="let calendar of upcoming_calendars">
+        <div class="upcoming">
+          <ion-avatar slot="start">
+            <img src="assets/imgs/man-1.png">
+          </ion-avatar>
+          <ion-label>
+            <span class="title">{{ calendar.name }}</span>
+            <span class="upcoming-date"><ion-datetime displayFormat="DD MMM YYYY" [value]="calendar.onDate"></ion-datetime></span>
+            <span class="upcoming-text">{{ calendar.description }}</span>
+            <!-- <span class="right-arrow">
+              <ion-icon class="arrow" name="chevron-forward-outline"></ion-icon>
+            </span> -->
+          </ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+    <h5 class="captain">Unread Message</h5>
+    <ion-row>
+      <ion-col size="12">
+        <div class="unread-message">
+          <ion-avatar slot="start">
+            <img src="assets/imgs/man-2.png">
+          </ion-avatar>
+          <ion-label>
+            <span class="title">Bean Era</span>
+            <span class="unread-time">11:02 am</span>
+            <span class="unread-text">Lorem ipsum dolor sit amet consectetur adipiscing elit. Cras viverra</span>
+          </ion-label>
+        </div>
+      </ion-col>
+      <ion-col size="12">
+        <div class="unread-message">
+          <ion-avatar slot="start">
+            <img src="assets/imgs/woman-2.png">
+          </ion-avatar>
+          <ion-label>
+            <span class="title">Max</span>
+            <span class="unread-time">02:44 pm</span>
+            <span class="unread-text">Lorem ipsum dolor sit amet consectetur adipiscing elit. Cras viverra</span>
+          </ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

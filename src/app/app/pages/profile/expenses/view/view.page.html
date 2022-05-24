@@ -1,0 +1,82 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Expense</ion-title>
+    <ion-buttons slot='end'>
+      <ion-button><ion-icon class="chatbox-icon" name="chatbox-ellipses-outline"></ion-icon></ion-button>
+      <ion-button (click)='presentProfileMenu($event)'><ion-icon class="threedot-icon" name="ellipsis-vertical"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content">
+    <form
+      [formGroup]="formData"
+      (ngSubmit)="submit(formData.value)"
+    >
+      <ion-item lines="none" class="form-control">
+        <ion-label>Child</ion-label>
+        <ion-select okText="OK" cancelText="Cancel">
+          <ion-select-option *ngFor="let child of children" [value]="child.id">{{ child.name }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item lines="none" class="form-control">
+        <ion-label>Description</ion-label>
+        <ion-input class="description" formControlName="description"></ion-input>
+      </ion-item>
+      <ion-item lines="none" class="form-control">
+        <ion-label>Due Date</ion-label>
+        <ion-datetime formControlName="onDate" picker-format="DD:MM:YYYY"></ion-datetime>
+        <span>
+          <ion-icon class="date-icon" name="today-outline"></ion-icon>
+        </span>
+      </ion-item>
+      <ion-item lines="none" class="form-control">
+        <ion-label>Amount</ion-label>
+        <ion-input class="amount"></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col size="6" class="left-col">
+          <ion-item lines="none" class="form-control">
+            <ion-label>Split</ion-label>
+            <ion-select formControlName="split1UserId" class="spitUserId">
+              <ion-select-option *ngFor="let user of profileUsers" [value]="user.user.id">{{ user.user.firstName }}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6" class="right-col">
+          <ion-item lines="none" class="form-control">
+            <ion-label>$</ion-label>
+            <ion-input class="splitUserAmount" type="number" formControlName="split1UserAmount"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6" class="left-col">
+          <ion-item lines="none" class="form-control">
+            <ion-label>Split</ion-label>
+            <ion-select formControlName="split2UserId" class="spitUserId">
+              <ion-select-option *ngFor="let user of profileUsers" [value]="user.user.id">{{ user.user.firstName }}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6" class="right-col">
+          <ion-item lines="none" class="form-control">
+            <ion-label>$</ion-label>
+            <ion-input class="splitUserAmount" type="number" formControlName="split2UserAmount"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-item lines="none" class="form-control">
+        <ion-label>Details</ion-label>
+        <ion-textarea rows="4"></ion-textarea>
+      </ion-item>
+      <div class="d-flex">
+        <button class="submitbutton" type="submit">Save</button>
+      </div>
+    </form>
+  </div>
+</ion-content>

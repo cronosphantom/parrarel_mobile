@@ -1,0 +1,65 @@
+.content {
+  padding: 20px;
+}
+
+.attach {
+  text-align: center;
+}
+
+.attachbtn {
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  background: linear-gradient(180deg, #12C9E9 0%, rgba(9, 168, 198, 0.5) 100%);
+
+  ion-icon {
+    margin: 37px;
+    color: #FFFFFF;
+    font-size: 25px;
+  }
+}
+
+ion-label {
+  font-family: 'Muli' !important;
+  margin-top: 9px !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-size: 14px !important;
+  line-height: 18px !important;
+  color: #2F4AA1 !important;
+}
+
+.form-control {
+  font-family: 'Muli' !important;
+  margin: 0 0 15px;
+  --background: #E6EFF6 !important;
+  border-radius: 10px;
+}
+
+.name {
+  text-indent: 20px;
+}
+
+.url {
+  text-indent: 65px;
+}
+
+.submitbutton {
+  width: 153px !important;
+  height: 39px !important;
+  background: linear-gradient(90deg, #15D2F0 12.37%, #03A2CC 100%) !important;
+  border-radius: 50px !important;
+
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
+  margin: 20px auto;
+}
+
+.d-flex {
+  display: flex;
+}

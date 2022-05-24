@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Access Control</ion-title>
+    <ion-buttons slot='end'>
+      <ion-button><ion-icon class="chatbox-icon" name="chatbox-ellipses-outline"></ion-icon></ion-button>
+      <ion-button (click)='presentProfileMenu($event)'><ion-icon class="threedot-icon" name="ellipsis-vertical"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content">
+    <form [formGroup]="access" (ngSubmit)="save(access.value)">
+      <ion-item lines="none">
+        <ion-avatar class='avatar'>
+          <img src="assets/imgs/man-1.png" />
+        </ion-avatar>
+      </ion-item>
+      <ion-item lines="none" class="form-control">
+        <ion-label>Name</ion-label>
+        <ion-input formControlName="name" class="name"></ion-input>
+      </ion-item>
+      <ion-item lines="none" class="form-control">
+        <ion-label>Phone</ion-label>
+        <ion-input formControlName="phone" class="phone">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none" class="form-control">
+        <ion-label>Role</ion-label>
+        <ion-select formControlName="role" value="parent" okText="Ok" cancelText="Cancel">
+          <ion-select-option value="parent">CO-PARENT</ion-select-option>
+          <ion-select-option value="relative">RELATIVE</ion-select-option>
+          <ion-select-option value="legal">LEGAL</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item lines="none" class="form-control">
+        <ion-label>Email</ion-label>
+        <ion-input formControlName="email" class="email">
+        </ion-input>
+      </ion-item>
+      <ion-item lines="none" class="form-control">
+        <ion-label>Expiration</ion-label>
+        <ion-datetime></ion-datetime>
+      </ion-item>
+      <ion-item lines="none" class="form-control">
+        <ion-label>Relation</ion-label>
+        <ion-input class="relation"></ion-input>
+      </ion-item>
+      <div class="d-flex">
+        <button class="submitbutton" type="submit">Save</button>
+      </div>
+    </form>
+  </div>
+</ion-content>
